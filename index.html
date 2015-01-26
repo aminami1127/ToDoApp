@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="jp">
+	<head>
+		<meta charset="utf-8">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.1.1/css/bootstrap.min.css">
+		<title>ToDoApp</title>
+
+		<style>
+			.completed {
+				text-decoration: line-through;
+				color: gray;
+			}
+		</style>
+
+		<script src="js/underscore.js"></script>
+		<script src="js/jquery.js"></script>
+		<script src="js/backbone.js"></script>
+		<script src="js/app.js"></script>
+	</head>
+	<body>
+  <div class="container">
+		<h1>Tasks</h1>
+
+		<form class="form-inline" id="addTask">
+			<input type="text" id="title">
+			<input class="btn btn-info"type="submit" value="Add" >
+			<span id="error"></span>
+		</form>
+
+		<div id="tasks"></div>
+
+		<p>Tasks Left: <span id="count"></span></p>
+
+		<script type="text/template" id="task-template">
+			<input type="checkbox" class="toggle"
+				 <%= completed ? 'checked' : '' %>>
+			<span class="<%= completed ? 'completed' : '' %>">
+				<%= title  %>
+			</span>
+			<span class="delete">[x]</span>
+			<span >TimeLimit: <%= timelimit%></span>
+		</script>
+  </div>
+	</body>
+</html>
