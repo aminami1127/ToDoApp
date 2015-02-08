@@ -32,13 +32,17 @@
 		<p>Tasks Left: <span id="count"></span></p>
 
 		<script type="text/template" id="task-template">
-			<input type="checkbox" class="toggle"
-				 <%= completed ? 'checked' : '' %>>
+      <div class="checkbox">
+        <input type="checkbox" class="toggle"
+           <%= completed ? 'checked' : '' %>>
 			<span class="<%= completed ? 'completed' : '' %>">
 				<%= title  %>
 			</span>
-			<span class="delete">[x]</span>
+      <span class="delete">
+        <button class="btn-xs btn-success">delete</button>
+      </span>
 			<span >TimeLimit: <%= timelimit%></span>
+      </div>
 		</script>
   </div>
 	</body>
